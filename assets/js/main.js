@@ -10,8 +10,6 @@ $(document).ready(function() {
   for (var key in oggetto) {
     console.log(key, oggetto[key]);
     document.getElementById('oggetto').innerHTML += "<li>" + key + " " + oggetto[key] + "</li>";
-
-    // document.getElementById('oggetto').innerHTML = oggetto[key].nome + " " + oggetto[key].cognome;
   }
 
   //creo un array di oggetti di studenti
@@ -49,9 +47,9 @@ $(document).ready(function() {
     }
 
     classe.push(studente);
-    console.log(classe);
-    for (var i = 0; i < classe.length; i++) {
-      document.getElementById('classe').innerHTML += "<li>" + classe[i].nome + " " + classe[i].cognome + " " + classe[i].eta +"</li>";
+    for (var key in studente) {
+      console.log(key, studente[key]);
+      document.getElementById('classe').innerHTML += "<li>" + key + " " + studente[key] + "</li>";
     }
 
   });
