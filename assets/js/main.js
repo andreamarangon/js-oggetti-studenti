@@ -2,13 +2,16 @@ $(document).ready(function() {
 
   //creo oggetto con le proprietà: nome, cognome età
   var oggetto = {
-    'nome': 'Andrea',
-    'cognome': 'Marangon',
-    'età': '36'
+    nome: 'Andrea',
+    cognome: 'Marangon',
+    età: '36'
   }
   //stampo a schermo attraverso ciclo for-in tutte le proprietà dell'oggetto
   for (var key in oggetto) {
     console.log(key, oggetto[key]);
+    document.getElementById('oggetto').innerHTML += "<li>" + key + " " + oggetto[key] + "</li>";
+
+    // document.getElementById('oggetto').innerHTML = oggetto[key].nome + " " + oggetto[key].cognome;
   }
 
   //creo un array di oggetti di studenti
@@ -28,6 +31,7 @@ $(document).ready(function() {
   ]
   //ciclo su tutti gli studenti e stampo per ognuno di essi: nome, cognome
   for (var i = 0; i < studenti.length; i++) {
+    document.getElementById('studenti').innerHTML += "<li>" + studenti[i].nome + " " + studenti[i].cognome + "</li>";
     console.log(studenti[i].nome + ' ' + studenti[i].cognome);
   }
 
@@ -46,6 +50,10 @@ $(document).ready(function() {
 
     classe.push(studente);
     console.log(classe);
+    for (var i = 0; i < classe.length; i++) {
+      document.getElementById('classe').innerHTML += "<li>" + classe[i].nome + " " + classe[i].cognome + " " + classe[i].eta +"</li>";
+    }
+
   });
 });
 
