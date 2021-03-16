@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   //creo oggetto con le proprietà: nome, cognome età
   var oggetto = {
     'nome': 'Andrea',
@@ -9,9 +10,43 @@ $(document).ready(function() {
   for (var key in oggetto) {
     console.log(key, oggetto[key]);
   }
+
   //creo un array di oggetti di studenti
+  var studenti = [
+    {
+      nome: 'Andrea',
+      cognome: 'Marangon',
+    },
+    {
+      nome: 'Pinco',
+      cognome: 'Pallino',
+    },
+    {
+      nome: 'Tizio',
+      cognome: 'Caio',
+    }
+  ]
   //ciclo su tutti gli studenti e stampo per ognuno di essi: nome, cognome
+  for (var i = 0; i < studenti.length; i++) {
+    console.log(studenti[i].nome + ' ' + studenti[i].cognome);
+  }
+
   //faccio inserire all'utente un nuovo oggetto studente inserendo: nome,cognome e età
+  var classe = [];
+
+  $('#add').click(function() {
+    var nome = $('#nome').val();
+    var cognome = $('#cognome').val();
+    var eta = $('#eta').val();
+    var studente = {
+      nome: nome,
+      cognome: cognome,
+      eta: eta,
+    }
+
+    classe.push(studente);
+    console.log(classe);
+  });
 });
 
 //FUNCTIONS
